@@ -1,5 +1,5 @@
 # 5MW-NREL-Controllers---Simulink
-Controllers designed to the 5MW NREL wind turbine using the Simulink and FAST V8.
+Controllers designed to the 5MW NREL wind turbine using the MATLAB Simulink and FAST V8.
 
 The FAST software is distruited by the National Renewable Energy Laboratory in here: https://nwtc.nrel.gov/FAST;
 
@@ -7,6 +7,7 @@ Matlab and Simulink are property of Mathworks (http://www.mathworks.com/);
 
 The Matlab version used in this project is the Matlab R20017b, although any other version can be used, as long as you compile FAST using your own version.
 
+The FAST version used was FAST V8(v8.16.00a-bjj)
 
 The files contained here are modified by the members of the Laboratoire de Mécanique de Normandie (LMN) from the INSA Rouen freely made available as example for anyone who is interested in this topic.
 
