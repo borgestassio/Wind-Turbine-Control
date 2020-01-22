@@ -5,6 +5,9 @@ The FAST software is distruited by the National Renewable Energy Laboratory in h
 
 Matlab and Simulink are property of Mathworks (http://www.mathworks.com/);
 
+The Matlab version used in this project is the Matlab R20017b, although any other version can be used, as long as you compile FAST using your own version.
+
+
 The files contained here are modified by the members of the Laboratoire de Mécanique de Normandie (LMN) from the INSA Rouen freely made available as example for anyone who is interested in this topic.
 
 The parameters used for the turbine are given by NREL in here: Definition of a 5-MW Reference Wind Turbine for Offshore System Development (http://www.nrel.gov/docs/fy09osti/38060.pdf).
