@@ -1,0 +1,52 @@
+UAE Phase VI (Ames) aerodynamic parameters for FAST certification test #9.
+SI                                     SysUnits - System of units for used for input and output [must be SI for FAST] (unquoted string)
+STEADY                                 StallMod - Dynamic stall included [BEDDOES or STEADY] (unquoted string)
+NO_CM                                  UseCm    - Use aerodynamic pitching moment model? [USE_CM or NO_CM] (unquoted string)
+EQUIL                                  InfModel - Inflow model [DYNIN or EQUIL] (unquoted string)
+SWIRL                                  IndModel - Induction-factor model [NONE or WAKE or SWIRL] (unquoted string)
+   0.005                               AToler   - Induction-factor tolerance (convergence criteria) (-)
+PRANDtl                                TLModel  - Tip-loss model (EQUIL only) [PRANDtl, GTECH, or NONE] (unquoted string)
+PRANDtl                                HLModel  - Hub-loss model (EQUIL only) [PRANdtl or NONE] (unquoted string)
+"Wind/UAE_VI/Shr11_30.wnd"             WindFile - Name of file containing wind data (quoted string)
+  12.192                               HH       - Wind reference (hub) height [TowerHt+Twr2Shft+OverHang*SIN(ShftTilt)] (m)
+   0.35                                TwrShad  - Tower-shadow velocity deficit (-)
+   0.4                                 ShadHWid - Tower-shadow half width (m)
+   1.401                               T_Shad_Refpt - Tower-shadow reference point (m)
+   1.246                               AirDens  - Air density (kg/m^3)
+   1.4639e-5                           KinVisc  - Kinematic air viscosity (m^2/sec)
+   0.004                               DTAero   - Time interval for aerodynamic calculations (sec)
+  10                                   NUMFOIL  - Number of different airfoil tables that will be read
+"AeroData/UAE_VI/cylinder.dat"         FoilNm   - Names of the airfoil files [NumFoil lines] (quoted strings)
+"AeroData/UAE_VI/Mod_S809_129.dat"
+"AeroData/UAE_VI/Mod_S809_185.dat"
+"AeroData/UAE_VI/Mod_S809_242.dat"
+"AeroData/UAE_VI/Mod_S809_298.dat"
+"AeroData/UAE_VI/Mod_S809_354.dat"
+"AeroData/UAE_VI/Mod_S809_410.dat"
+"AeroData/UAE_VI/Mod_S809_600.dat"
+"AeroData/UAE_VI/Mod_S809_800.dat"
+"AeroData/UAE_VI/Mod_S809_Outboard.dat"
+  21                                   BldNodes - Number of blade nodes used for analysis (-)
+RNodes  AeroTwst  DRNodes   Chord   NFoil  PrnElm
+0.5680    0.000    0.2721   0.219     1    NOPRINT
+0.8801   -0.098    0.3520   0.181     1    NOPRINT
+1.2321   19.423    0.3520   0.714     3    NOPRINT
+1.5087   14.318    0.2012   0.711     4    NOPRINT
+1.7099   10.971    0.2012   0.691     5    NOPRINT
+1.9278    8.244    0.2347   0.668     6    NOPRINT
+2.1457    6.164    0.2012   0.647     7    NOPRINT
+2.3469    4.689    0.2012   0.627     7    NOPRINT
+2.5480    3.499    0.2012   0.606     8    NOPRINT
+2.7660    2.478    0.2349   0.584     8    NOPRINT
+2.9840    1.686    0.2010   0.561     8    NOPRINT
+3.1850    1.115    0.2012   0.542     8    NOPRINT
+3.3862    0.666    0.2012   0.522     8    NOPRINT
+3.6041    0.267    0.2347   0.499     8    NOPRINT
+3.8220   -0.079    0.2012   0.478     8    NOPRINT
+4.0232   -0.381    0.2012   0.457     9    NOPRINT
+4.2244   -0.679    0.2012   0.437     9    NOPRINT
+4.4004   -0.933    0.1509   0.419     9    NOPRINT
+4.5764   -1.184    0.2012   0.401    10    NOPRINT
+4.7776   -1.466    0.2012   0.381    10    NOPRINT
+4.9536   -1.711    0.1509   0.363    10    NOPRINT
+

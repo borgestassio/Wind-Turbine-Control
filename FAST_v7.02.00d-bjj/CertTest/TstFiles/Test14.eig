@@ -1,0 +1,34 @@
+ 
+Running Eigenanalysis.m using "Test14.lin"
+Please wait...
+                                      
+GetMats.m completed             
+Type "who" to list available variables
+
+  Running mbc3 (v1.00.00a-gbir, 15-Oct-2008)
+
+  
+ Multi-Blade Coordinate transformation completed 
+
+N =
+
+    28
+
+
+ans =
+
+      0.40936
+      0.40992
+       1.2169
+       1.2279
+       1.2582
+       1.7065
+       1.8573
+       1.8823
+       2.8704
+        3.103
+       3.7513
+       3.7844
+       3.8814
+       18.458
+

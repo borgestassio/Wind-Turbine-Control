@@ -1,0 +1,57 @@
+--------------------------------------------------------------------------------
+---------------------- FAST INDIVIDUAL BLADE FILE ------------------------------
+Standard AWT-27CR blade data.  Used for FAST Certification Tests.
+---------------------- BLADE PARAMETERS ----------------------------------------
+  21        NBlInpSt    - Number of blade input stations (-)
+False       CalcBMode   - Calculate blade mode shapes internally {T: ignore mode shapes from below, F: use mode shapes from below} [CURRENTLY IGNORED] (flag)
+   3.9      BldFlDmp(1) - Blade flap mode #1 structural damping in percent of critical (%)
+  12.0      BldFlDmp(2) - Blade flap mode #2 structural damping in percent of critical (%)
+  11.4      BldEdDmp(1) - Blade edge mode #1 structural damping in percent of critical (%)
+---------------------- BLADE ADJUSTMENT FACTORS --------------------------------
+   1.0      FlStTunr(1) - Blade flapwise modal stiffness tuner, 1st mode (-)
+   1.0      FlStTunr(2) - Blade flapwise modal stiffness tuner, 2nd mode (-)
+   1.0      AdjBlMs     - Factor to adjust blade mass density (-)
+   1.0      AdjFlSt     - Factor to adjust blade flap stiffness (-)
+   1.0      AdjEdSt     - Factor to adjust blade edge stiffness (-)
+---------------------- DISTRIBUTED BLADE PROPERTIES ----------------------------
+BlFract  AeroCent  StrcTwst  BMassDen    FlpStff    EdgStff    GJStff    EAStff   Alpha   FlpIner   EdgIner   PrecrvRef   PreswpRef   FlpcgOf   EdgcgOf   FlpEAOf   EdgEAOf
+    (-)       (-)     (deg)    (kg/m)     (Nm^2)     (Nm^2)    (Nm^2)       (N)     (-)    (kg m)    (kg m)         (m)         (m)       (m)       (m)       (m)       (m)
+  0.000     0.250    10.500    90.370   44200000  117000000  8.47E+06  1.81E+09     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.050     0.250    10.500    58.496   27595540   86179694  8.48E+06  1.09E+09     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.100     0.250    10.484    47.192   19615360   82402923  4.49E+06  9.64E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.150     0.250    10.404    49.105   15821054   97721049  4.01E+06  1.00E+09     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.200     0.250    10.226    50.333   12799255  107457955  3.10E+06  9.87E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.250     0.250     9.852    48.912   10427460  106544583  2.34E+06  9.48E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.300     0.250     9.517    45.977    8427317   99541685  1.92E+06  8.94E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.350     0.250     9.096    42.735    6826572   89815283  1.61E+06  8.32E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.400     0.250     8.557    39.243    5550799   77872895  1.32E+06  7.66E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.450     0.250     7.692    36.024    4462882   66399835  1.07E+06  7.03E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.500     0.250     6.616    33.118    3589918   55463803  8.64E+05  6.42E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.550     0.250     5.613    30.272    2821277   45077024  6.85E+05  5.82E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.600     0.250     4.567    27.523    2221759   35580668  5.26E+05  5.23E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.650     0.250     3.575    24.996    1677427   27506483  3.96E+05  4.76E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.700     0.250     2.734    22.991    1264032   22806625  2.99E+05  4.43E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.750     0.250     1.990    20.925     883482   18187986  2.23E+05  4.06E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.800     0.250     1.417    18.628     625509   13872449  1.57E+05  3.53E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.850     0.250     1.012    16.201     382064    9657950  1.00E+05  2.90E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.900     0.250     0.664    12.871     239543    6145300  5.57E+04  2.27E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  0.950     0.250     0.395     9.536     103000    2780000  3.22E+04  1.89E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+  1.000     0.250     0.126     6.100     103000    2780000  3.26E+04  1.90E+08     0.0      0.01      0.01         0.0         0.0       0.0       0.0       0.0       0.0
+---------------------- BLADE MODE SHAPES ---------------------------------------
+   0.2990   BldFl1Sh(2) - Flap mode 1, coeff of x^2
+   1.2230   BldFl1Sh(3) -            , coeff of x^3
+  -1.4240   BldFl1Sh(4) -            , coeff of x^4
+   1.5930   BldFl1Sh(5) -            , coeff of x^5
+  -0.6920   BldFl1Sh(6) -            , coeff of x^6
+  -1.4400   BldFl2Sh(2) - Flap mode 2, coeff of x^2
+  -1.2160   BldFl2Sh(3) -            , coeff of x^3
+  -3.7510   BldFl2Sh(4) -            , coeff of x^4
+  13.9230   BldFl2Sh(5) -            , coeff of x^5
+  -6.5160   BldFl2Sh(6) -            , coeff of x^6
+   1.5350   BldEdgSh(2) - Edge mode 1, coeff of x^2
+  -0.6890   BldEdgSh(3) -            , coeff of x^3
+  -0.8170   BldEdgSh(4) -            , coeff of x^4
+   1.8760   BldEdgSh(5) -            , coeff of x^5
+  -0.9050   BldEdgSh(6) -            , coeff of x^6
+
+

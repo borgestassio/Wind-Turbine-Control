@@ -1,0 +1,30 @@
+--------------------------------------------------------------------------------
+---------------------- FAST PLATFORM FILE --------------------------------------
+Example platform file.
+---------------------- FEATURE FLAGS (CONT) ------------------------------------
+False       PtfmSgDOF   - Platform horizontal surge translation DOF (flag)
+False       PtfmSwDOF   - Platform horizontal sway translation DOF (flag)
+False       PtfmHvDOF   - Platform vertical heave translation DOF (flag)
+False       PtfmRDOF    - Platform roll tilt rotation DOF (flag)
+False       PtfmPDOF    - Platform pitch tilt rotation DOF (flag)
+False       PtfmYDOF    - Platform yaw rotation DOF (flag)
+---------------------- INITIAL CONDITIONS (CONT) -------------------------------
+   0.0      PtfmSurge   - Initial or fixed horizontal surge translational displacement of platform (meters)
+   0.0      PtfmSway    - Initial or fixed horizontal sway translational displacement of platform (meters)
+   0.0      PtfmHeave   - Initial or fixed vertical heave translational displacement of platform (meters)
+   0.0      PtfmRoll    - Initial or fixed roll tilt rotational displacement of platform (degrees)
+   0.0      PtfmPitch   - Initial or fixed pitch tilt rotational displacement of platform (degrees)
+   0.0      PtfmYaw     - Initial or fixed yaw rotational displacement of platform (degrees)
+---------------------- TURBINE CONFIGURATION (CONT) ----------------------------
+   0.0      TwrDraft    - Downward distance from the ground level [onshore] or MSL [offshore] to the tower base platform connection (meters)
+   0.0      PtfmCM      - Downward distance from the ground level [onshore] or MSL [offshore] to the platform CM (meters)
+   0.0      PtfmRef     - Downward distance from the ground level [onshore] or MSL [offshore] to the platform reference point (meters)
+---------------------- MASS AND INERTIA (CONT) ---------------------------------
+   0.0      PtfmMass    - Platform mass (kg)
+   0.0      PtfmRIner   - Platform inertia for roll tilt rotation about the platform CM (kg m^2)
+   0.0      PtfmPIner   - Platform inertia for pitch tilt rotation about the platform CM (kg m^2)
+   0.0      PtfmYIner   - Platfrom inertia for yaw rotation about the platform CM (kg m^2)
+---------------------- PLATFORM (CONT) -----------------------------------------
+   0        PtfmLdMod   - Platform loading model {0: none, 1: user-defined from routine UserPtfmLd} (switch)
+
+

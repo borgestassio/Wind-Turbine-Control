@@ -1,0 +1,42 @@
+AWT-27CR aerodynamic parameters for FAST certification test #5.
+SI                                     SysUnits - System of units for used for input and output [must be SI for FAST] (unquoted string)
+BEDDOES                                StallMod - Dynamic stall included [BEDDOES or STEADY] (unquoted string)
+NO_CM                                  UseCm    - Use aerodynamic pitching moment model? [USE_CM or NO_CM] (unquoted string)
+EQUIL                                  InfModel - Inflow model [DYNIN or EQUIL] (unquoted string)
+SWIRL                                  IndModel - Induction-factor model [NONE or WAKE or SWIRL] (unquoted string)
+   0.005                               AToler   - Induction-factor tolerance (convergence criteria) (-)
+PRANDtl                                TLModel  - Tip-loss model (EQUIL only) [PRANDtl, GTECH, or NONE] (unquoted string)
+NONE                                   HLModel  - Hub-loss model (EQUIL only) [PRANdtl or NONE] (unquoted string)
+"Wind/AWT27/NoShr_12.wnd"              WindFile - Name of file containing wind data (quoted string)
+  42.672                               HH       - Wind reference (hub) height [TowerHt+Twr2Shft+OverHang*SIN(ShftTilt)] (m)
+   0.0                                 TwrShad  - Tower-shadow velocity deficit (-)
+   1.0                                 ShadHWid - Tower-shadow half width (m)
+   2.432                               T_Shad_Refpt - Tower-shadow reference point (m)
+   1.225                               AirDens  - Air density (kg/m^3)
+   1.4639e-5                           KinVisc  - Kinematic air viscosity (m^2/sec)
+   0.004                               DTAero   - Time interval for aerodynamic calculations (sec)
+  10                                   NumFoil  - Number of airfoil files (-)
+"AeroData/AWT27/AWT27_05.dat"          FoilNm   - Names of the airfoil files [NumFoil lines] (quoted strings)
+"AeroData/AWT27/AWT27_15.dat"
+"AeroData/AWT27/AWT27_25.dat"
+"AeroData/AWT27/AWT27_35.dat"
+"AeroData/AWT27/AWT27_45.dat"
+"AeroData/AWT27/AWT27_55.dat"
+"AeroData/AWT27/AWT27_65.dat"
+"AeroData/AWT27/AWT27_75.dat"
+"AeroData/AWT27/AWT27_85.dat"
+"AeroData/AWT27/AWT27_95.dat"
+  10                                   BldNodes - Number of blade nodes used for analysis (-)
+RNodes   AeroTwst DRNodes Chord NFoil PrnElm
+ 1.81265  5.80    1.2573  0.859   1   NOPRINT
+ 3.06995  5.20    1.2573  1.045   2   NOPRINT
+ 4.32725  4.66    1.2573  1.145   3   NOPRINT
+ 5.58455  3.73    1.2573  1.124   4   NOPRINT
+ 6.84185  2.64    1.2573  1.054   5   NOPRINT
+ 8.09915  1.59    1.2573  0.976   6   NOPRINT
+ 9.35645  0.73    1.2573  0.885   7   NOPRINT
+10.61375  0.23    1.2573  0.775   8   NOPRINT
+11.87105  0.08    1.2573  0.651   9   NOPRINT
+13.12835  0.03    1.2573  0.493  10   NOPRINT
+
+

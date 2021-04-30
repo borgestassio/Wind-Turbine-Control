@@ -58,5 +58,5 @@ end
 
 %démarrage de la simulation
     
-  sim('TestControle.mdl',[0,TMax]);
+  sim('TestController.mdl',[0,TMax]);
        

@@ -1,0 +1,42 @@
+SWRT rotor aerodynamic parameters for FAST certification test #15.
+SI                                     SysUnits - System of units for used for input and output [must be SI for FAST] (unquoted string)
+BEDDOES                                StallMod - Dynamic stall included [BEDDOES or STEADY] (unquoted string)
+NO_CM                                  UseCm    - Use aerodynamic pitching moment model? [USE_CM or NO_CM] (unquoted string)
+DYNIN                                  InfModel - Inflow model [DYNIN or EQUIL] (unquoted string)
+SWIRL                                  IndModel - Induction-factor model [NONE or WAKE or SWIRL] (unquoted string)
+   0.005                               AToler   - Induction-factor tolerance (convergence criteria) (-)
+PRANDtl                                TLModel  - Tip-loss model (EQUIL only) [PRANDtl, GTECH, or NONE] (unquoted string)
+NONE                                   HLModel  - Hub-loss model (EQUIL only) [PRANdtl or NONE] (unquoted string)
+"Wind/SWRT/EOG_01_R.wnd"               WindFile - Name of file containing wind data (quoted string)
+  34.6189                              HH       - Wind reference (hub) height [TowerHt+Twr2Shft+OverHang*SIN(ShftTilt)] (m)
+   0.0                                 TwrShad  - Tower-shadow velocity deficit (-)
+9999.9                                 ShadHWid - Tower-shadow half width (m)
+9999.9                                 T_Shad_Refpt - Tower-shadow reference point (m)
+   1.0                                 AirDens  - Air density (kg/m^3)
+   1.5100E-05                          KinVisc  - Kinematic air viscosity (m^2/sec)
+   1.0000E-03                          DTAero   - Time interval for aerodynamic calculations (sec)
+   4                                   NumFoil  - Number of airfoil files (-)
+"AeroData/SWRT/TailPlate.dat"          FoilNm   - Names of the airfoil files [NumFoil lines] (quoted strings)
+"AeroData/SWRT/SH3052Mod_AllRe_Hanley.dat"
+"AeroData/SWRT/SH3052Mod_AllRe_Elem14_Hanley.dat"
+"AeroData/SWRT/SH3052Mod_AllRe_Elem15_Hanley.dat"
+  15                                   BldNodes - Number of blade nodes used for analysis (-)
+RNodes    AeroTwst  DRNodes  Chord  NFoil  PrnElm
+0.3896    0.00      0.1731   0.213  2      NOPRINT
+0.5627    0.00      0.1731   0.213  2      NOPRINT
+0.7358    0.00      0.1731   0.213  2      NOPRINT
+0.9090    0.00      0.1731   0.213  2      NOPRINT
+1.0821    0.00      0.1731   0.213  2      NOPRINT
+1.2552    0.00      0.1731   0.213  2      NOPRINT
+1.4284    0.00      0.1731   0.213  2      NOPRINT
+1.6015    0.00      0.1731   0.213  2      NOPRINT
+1.7746    0.00      0.1731   0.213  2      NOPRINT
+1.9478    0.00      0.1731   0.213  2      NOPRINT
+2.1209    0.00      0.1731   0.213  2      NOPRINT
+2.2940    0.00      0.1731   0.213  2      NOPRINT
+2.4672    0.00      0.1731   0.213  2      NOPRINT
+2.6403    1.60      0.1731   0.201  3      NOPRINT
+2.8134    3.20      0.1731   0.181  4      NOPRINT
+ReNum
+
+

@@ -1,21 +1,43 @@
 # 5MW-NREL-Controllers---Simulink
-Controllers designed to the 5MW NREL wind turbine using the MATLAB Simulink and FAST V8.
+This repository has a few controllers for the 5-MW Reference Wind Turbine for Offshore System Development.
+The controllers are implemented through Matlab / Simulink.
 
-The FAST software is distruited by the National Renewable Energy Laboratory in here: https://nwtc.nrel.gov/FAST;
+We start with a simple 1-DOF controller, where we consider only the rotor.
+The complexity of the system is increased up to 11 DOF, where we use MBC techniques to extract important features, don't worry, the details will be on the appropriate folder.
+On the control side, we start with a simple feedback controller until we reach an Artificial Neural Network based controller. In the process, we'll see state estimator (Kalman Filter), disturbance rejection and gain scheduling, all in due time.
+
+Ok, let's cut to the chase, you're here to see some pretty graphs and poor explanation.
+
+First order of business, set-up the enviroment, right?
+Visit the folder Set-up the environment and you'll find information on how to set-up the FAST V8 and Matlab/Simulink.
+
+
+
+
+Other info and disclaimers:
+
+Controllers designed to the 5MW NREL wind turbine using the MATLAB Simulink and FAST V8.
+Note: OpenFAST is already available and it's open-source, the reason I'm still using FAST V8 is that my MATLAB is an older version not supported on the most recent FAST distribution.
+
+The FAST software is distributed by the National Renewable Energy Laboratory in here: https://nwtc.nrel.gov/FAST;
 
 Matlab and Simulink are property of Mathworks (http://www.mathworks.com/);
 
-The Matlab version used in this project is the Matlab R20017b, although any other version can be used, as long as you compile FAST using your own version.
+The Matlab version used in this project is the Matlab R20017b
 
 The FAST version used was FAST V8(v8.16.00a-bjj)
 
-The files contained here are modified by the members of the Laboratoire de Mécanique de Normandie (LMN) from the INSA Rouen freely made available as example for anyone who is interested in this topic.
+For Linearization, I used FAST V7 mainly because the output file (.lin) is easier to extract the desired information.
+
+Although this is an individual repository maintained by the only author, some of the files contained here are modified by the members of the Laboratoire de Mécanique de Normandie (LMN) from the INSA Rouen freely made available as example for anyone who is interested in this topic.
+
+Useful links:
 
 The parameters used for the turbine are given by NREL in here: Definition of a 5-MW Reference Wind Turbine for Offshore System Development (http://www.nrel.gov/docs/fy09osti/38060.pdf).
 
 Some controllers are adapted from Advanced Control Design for Wind Turbines; Part I: Control Design, Implementation, and Initial Tests  (http://www.mapcruzin.com/wind-power-publications/research-development/42437.pdf)
 
 
-Fell free to contact anytime for help, suggestions, critics and insults as well :)
+Fell free to contact me anytime for help, suggestions, critics and insults as well :)
 
 These files are provided without warranty. Use them at your own risk.
