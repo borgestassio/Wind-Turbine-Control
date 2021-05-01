@@ -63,3 +63,14 @@ Alternatively, you can use anyother method to plot the data.
 
 This guide focus on developing controllers for the 5MW NREL wind turbine, and as a start point, we choose the certification test #18 (Test18.fst) to perform the initial tests, mainly because the controllers used in this certification tests are implemented by the *DISCON.f90* source file and can be used for comparison. 
 The objective of this section is to copy the controller from the DLL interface, written in the *DISCON.f90* file, to the Simulink and obtain the results. All the files used are present on the appropriate folder and you can modify them to achieve your goals. The only limit are the functions available on Simulink itself, as we'll see later.
+
+In the figures below show an overview of the Simulink Model, the implementation of the Pitch Controller and the Torque Controller as outlined in the baseline controller.
+I won't get into details about the Torque Controller, but we'll go through the PID controller for the pitch angle as it'll be our point of comparison when implementing the other controllers.
+
+
+
+![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Set-up%20Environment/Figures/Overview.JPG "Overview")
+
+![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Set-up%20Environment/Figures/PItch%20Controller%20-%20PID.JPG "Pitch PID Controller")
+
+![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Set-up%20Environment/Figures/Torque%20Controller.JPG "Torque Controller")
