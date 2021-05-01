@@ -1,14 +1,14 @@
-Instructions to set-up the environment to use Fast V8 and Matlab/Simulink:
+# Instructions to set-up the environment to use Fast V8 and Matlab/Simulink:
 
 
 Aiming in make the control design in the 5MW NREL wind turbine more fluid, this section will guide anyone interested in using the FAST V8 jointly with Simulink. This guide will cover simple, but essential, topics to make possible run simulations using the FAST V8 software from a Simulink model. In order to achieve that, we cover the following topics:
 1	Compiling the S-Function from FAST V8 to your Matlab version;
 2	Running the examples;
 3	Read and plot output data;
-4	Variable-Speed and Pitch controller by Simulink model;
+4	Variable-Speed and Pitch controller through Simulink;
 5	Comparison of DLL and Simulink results;
 
-1	COMPILING THE S-FUNCTION
+## 1	COMPILING THE S-FUNCTION
 
 The Fast S-Function, called FAST_SFunc, is distributed with the FAST V8 software is compiled for the Matlab 2014b 32 bits version, in order to use this function in any other version, it need to be recompiled.
 
@@ -27,7 +27,7 @@ It will give you all compatible MEX compilers installed, if you have more than o
 This procedure is quite simple: inside the folder “FastV8\Simulink\Source” you will find the file: “create_FAST_SFunc.m”. Open and run the file and, if no errors comes up, your re-compiled S-Function is ready for use.
 
 
-2	RUNNING THE EXAMPLES
+## 2	RUNNING THE EXAMPLES
 
 
 The FAST V8 comes with two example files to run with on Simulink, both are located inside the folder: “FastV8\Simulink\Samples” and each example has two files, a Matlab script file (*.m) and a Simulink Model (*.mdl). The script calls the mdl file and, when required, define the turbine parameters. As for the Simulink Model, it contains the S-Function called FAST_SFunc and blocks to insert the controllers for each controllable wind turbine component, we focus on the pitch controller on this repository (for now...)
@@ -44,7 +44,7 @@ Note: You can find the *Run_OpenLoop.m* commented on this folder, also the mdl f
 Regarding the Test01_SIG example (also available on this folder), it consists of a replication of the certification test #1, but using a Simple Induction Generator inside the Simulink model (Test01_SIG.mdl) . Open the script file (Run_Test01_SIG.m) and you can see that some wind turbine parameters are defined in the file before calling the Simulink Model. We can see the Simple Induction Generator controller in the Simulink block, just double-click the Simple Induction Generator block and it will open the controller. Before running this example you must follow the instruction in the scrip file, which is to change the *CertTest\AWT27\Test01_ServoDyn.dat* file to set VSControl = 4.
 
 
-4	READ AND PLOT DATA
+## 4	READ AND PLOT DATA
 
 Once all certification tests are done, you will be able to see some new files in the certification test, as stated above, these new files have the .SFunc.out or SFunc.outb extension, and contain the data from the simulation using the SFunction.
 
@@ -57,3 +57,9 @@ If you want to plot the data, there is also a function to do so, just call the P
 Note: The input to the PlotFASTouput function is a cell containing all files you want to plot, this is done to ease the comparison between simulation, as you can simply input two files to this function and they will be plotted in the same figure.
 
 Alternatively, you can use anyother method to plot the data.
+
+
+## 5 VARIABLE-SPEED AND PITCH CONTROLLER THROUGH SIMULINK
+
+This guide focus on developing controllers for the 5MW NREL wind turbine, and as a start point, we choose the certification test #18 (Test18.fst) to perform the initial tests, mainly because the controllers used in this certification tests are implemented by the *DISCON.f90* source file and can be used for comparison. 
+The objective of this section is to copy the controller from the DLL interface, written in the *DISCON.f90* file, to the Simulink and obtain the results. All the files used are present on the appropriate folder and you can modify them to achieve your goals. The only limit are the functions available on Simulink itself, as we'll see later.
