@@ -79,3 +79,14 @@ I won't get into details about the Torque Controller, but we'll go through the P
 ## 4 COMPARISON OF DLL AND SIMULINK RESULTS
 
 
+The results we are interested in are Rotor Speed, Pitch and Power, are respectively compared in the graphs below.
+The differences clearly noted are discussed on the [NREL Forum](https://wind.nrel.gov/forum/wind/viewtopic.php?f=30&t=1777&sid=42d3fd440412bdff1f8aafac49a9fa1a), and are probably due to the initial values on the Simulink, which are usually 0, this is easily noted on the generator graph. Despite these differences, when a longer simulation is executed, the values tend to be the equal and the during the analysis we might discard the initial data.
+
+
+![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Set-up%20Environment/Figures/DDLxSimu_Rot.png "DLLxSimulink Rotor")
+
+
+![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Set-up%20Environment/Figures/DDLxSimu_Pitch.png "DLLxSimulink Pitch")
+
+
+![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Set-up%20Environment/Figures/DDLxSimu_Gen.png "DLLxSimulink Generator")
