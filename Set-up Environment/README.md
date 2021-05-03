@@ -44,7 +44,7 @@ Note: You can find the *Run_OpenLoop.m* commented on this folder, also the mdl f
 Regarding the Test01_SIG example (also available on this folder), it consists of a replication of the certification test #1, but using a Simple Induction Generator inside the Simulink model (Test01_SIG.mdl) . Open the script file (Run_Test01_SIG.m) and you can see that some wind turbine parameters are defined in the file before calling the Simulink Model. We can see the Simple Induction Generator controller in the Simulink block, just double-click the Simple Induction Generator block and it will open the controller. Before running this example you must follow the instruction in the scrip file, which is to change the *CertTest\AWT27\Test01_ServoDyn.dat* file to set VSControl = 4.
 
 
-## 4	READ AND PLOT DATA
+## 3	READ AND PLOT DATA
 
 Once all certification tests are done, you will be able to see some new files in the certification test, as stated above, these new files have the .SFunc.out or SFunc.outb extension, and contain the data from the simulation using the SFunction.
 
@@ -59,7 +59,7 @@ Note: The input to the PlotFASTouput function is a cell containing all files you
 Alternatively, you can use anyother method to plot the data.
 
 
-## 5 VARIABLE-SPEED AND PITCH CONTROLLER THROUGH SIMULINK
+## 4 VARIABLE-SPEED AND PITCH CONTROLLER THROUGH SIMULINK
 
 This guide focus on developing controllers for the 5MW NREL wind turbine, and as a start point, we choose the certification test #18 (Test18.fst) to perform the initial tests, mainly because the controllers used in this certification tests are implemented by the *DISCON.f90* source file and can be used for comparison. 
 The objective of this section is to copy the controller from the DLL interface, written in the *DISCON.f90* file, to the Simulink and obtain the results. All the files used are present on the appropriate folder and you can modify them to achieve your goals. The only limit are the functions available on Simulink itself, as we'll see later.
@@ -74,3 +74,8 @@ I won't get into details about the Torque Controller, but we'll go through the P
 ![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Set-up%20Environment/Figures/PItch%20Controller%20-%20PID.JPG "Pitch PID Controller")
 
 ![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Set-up%20Environment/Figures/Torque%20Controller.JPG "Torque Controller")
+
+
+## 4 COMPARISON OF DLL AND SIMULINK RESULTS
+
+
