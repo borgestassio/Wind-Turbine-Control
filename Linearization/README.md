@@ -24,16 +24,16 @@ The objective of the linearization is to extract the state matrices and have the
 ![equation]http://www.sciweavers.org/tex2img.php?eq=%0A%5Cbegin%7Bcases%7D%5Cdot%20%5CDelta%20x%20%3D%20A%20%5CDelta%20x%20%2B%20B%20%5CDelta%20u%20%2BB_d%20%5CDelta%20u_d%20%5C%5C%20%5CDelta%20y%3DC%20%5CDelta%20x%20%2B%20D%20%5CDelta%20u%20%2B%20D_d%20%5CDelta%20u_d%5Cend%7Bcases%7D%20%20%20%20&bc=White&fc=Black&im=png&fs=12&ff=arev&edit=0
 
 Where: 
-Δx is the state vector;
-Δu is the control input vector;
-Δu_d is the disturbance input vector;
-Δy is the control (or measured) output;
-A represents the state matrix;
-B the control input gain matrix;
-B_d is the disturbance input gain matrix;
-C relates the measured output  Δy to the turbine states;
-D relates the control input to the output;
-D_d relates the measured output to the disturbance states.
+* Δx is the state vector;
+* Δu is the control input vector;
+* Δu_d is the disturbance input vector;
+* Δy is the control (or measured) output;
+* A represents the state matrix;
+* B the control input gain matrix;
+* B_d is the disturbance input gain matrix;
+* C relates the measured output  Δy to the turbine states;
+* D relates the control input to the output;
+* D_d relates the measured output to the disturbance states.
 
 That being said, we focus on how to acquire these matrices.
 
@@ -43,20 +43,20 @@ For the linearization, the process will follow the instructions presented in [Ad
 Wind Turbines](https://www.nrel.gov/docs/fy08osti/42437.pdf), despite its use of a 2 bladed turbine, the process is almost the same, and for the parameters regarding the 5 MW Wind Turbine, we’ll follow [Definition of a 5-MW Reference
 Wind Turbine](https://www.nrel.gov/docs/fy09osti/38060.pdf), which contains all definitions and configurations of the turbine.
 Inside your .fst file, in this case, “NRELOffshrBsline5MW_Onshore.fst”, go to the FEATURE FLAGS (LINE 54). Now we begin to modify the configuration file to obtain the results needed, the appropriate Degrees of Freedom (DOF) will be used for the linearization:
-•	FlapDOF1;
-•	DrTrDOF;
-•	GenDOF;
-•	CompAero.
++ FlapDOF1;
++ DrTrDOF;
++ GenDOF;
++ CompAero.
 The others DOFs must be set to False, so your file will look like this:
 
 ![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Linearization/images/fst_linearization.png "Linear1")
 
 To perform the simulation, we will need to change some lines in the *SIMULATION CONTROL* part:
-•	ADAMSPREP should be set to 1 (Run FAST);
-•	AnalMode should be 2 (which is to create a periodic linearized model);
-•	NumBl remains the same, as we’re working with 3 blades;
-•	TMax is advised to be 1200, although the linearization will be achieved before that;
-•	DT is set to 0.006 for no particular reason described in any document.
++ ADAMSPREP should be set to 1 (Run FAST);
++ AnalMode should be 2 (which is to create a periodic linearized model);
++ NumBl remains the same, as we’re working with 3 blades;
++ TMax is advised to be 1200, although the linearization will be achieved before that;
++ DT is set to 0.006 for no particular reason described in any document.
 
 The SIMULATION CONTROL portion of your file should be similar to this:
 ![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Linearization/images/fst_linearization2.png "Linear2")
@@ -64,14 +64,14 @@ The SIMULATION CONTROL portion of your file should be similar to this:
 
 
 The linearization process utilizes the turbine parameters to perform the calculations, therefore, in order to successful linearize the model, we must pass to FAST the correct parameters to the turbine control, which is done in the TURBINE CONTROL portion:
-•	YCMode must be 0;
-•	PCMode is set to 0;
-•	VSContrl is activated, set to 1;
-•	VS_RtGnSp must be 121.6805;
-•	VS_RtTq is 43093.55;
-•	VS_Rgn2K is set to 2.332287;
-•	VS_SlPc is equal to 10.0;
-•	GenModel is 3;
++ YCMode must be 0;
++ PCMode is set to 0;
++ VSContrl is activated, set to 1;
++ VS_RtGnSp must be 121.6805;
++ VS_RtTq is 43093.55;
++ VS_Rgn2K is set to 2.332287;
++ VS_SlPc is equal to 10.0;
++ GenModel is 3;
 
 The others parameters remain the same, so your file should be similar to this:
 ![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Linearization/images/fst_linearization3.png "Linear3")
@@ -79,12 +79,12 @@ The others parameters remain the same, so your file should be similar to this:
 I might be mistaken, but I believe all other parameters are already set correctly, so it is time to move to other file, at this point, specifically to the NRELOffshrBsline5MW_Linear.dat file, where the linearization properties are.
 
 Here, the changes are:
-•	VelTol to 0.00001;
-•	NAzimStep to 24;
-•	NInputs to 1;
-•	CntrlInpt to 4;
-•	NDisturbs to 1;
-•	Disturbnc to 1;
++ VelTol to 0.00001;
++ NAzimStep to 24;
++ NInputs to 1;
++ CntrlInpt to 4;
++ NDisturbs to 1;
++ Disturbnc to 1;
 ![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Linearization/images/fst_linearization4.png "Linear4")
 
 
@@ -137,11 +137,11 @@ The command window on Matlab will as for the .lin file
 ![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Linearization/images/fst_linearization10.png "Linear10")
 
 6.	Your matrices are now available, as described in [User’s Guide to MBC3](https://www.nrel.gov/docs/fy10osti/44327.pdf), as the azimuth-averaged state matrices:
-	a.	AvgAMat = A 
-	b.	AvgBMat = B
-	c.	AvgBdMat = Bd
-	d.	AvgCMat = C
-	e.	AvgDMat = D
-	f.	AvgDdMat = Dd
+* AvgAMat = A 
+* AvgBMat = B
+* AvgBdMat = Bd
+* AvgCMat = C
+* AvgDMat = D
+* AvgDdMat = Dd
 
-
+In possession of these matrices, you now have a linearized model that can be used to design the controllers described in [Advanced Control Design for Wind Turbines](https://www.nrel.gov/docs/fy08osti/42437.pdf). Refer to the other folders to find the guide for each type of controller.
