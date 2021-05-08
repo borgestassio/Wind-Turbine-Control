@@ -144,4 +144,4 @@ The command window on Matlab will as for the .lin file
 	e.	AvgDMat = D
 	f.	AvgDdMat = Dd
 
-In possession of these matrices, you now have a linearized model that can be used to design the controllers described in [Advanced Control Design for Wind Turbines](https://www.nrel.gov/docs/fy08osti/42437.pdf). Refer to the other folders to find the guide for each type of controller.
+
