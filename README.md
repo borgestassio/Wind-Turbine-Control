@@ -8,13 +8,22 @@ On the control side, we start with a simple feedback controller until we reach a
 
 Ok, let's cut to the chase, you're here to see some pretty graphs and poor explanation.
 
-First order of business, set-up the enviroment, right?
-Visit the folder Set-up the environment and you'll find information on how to set-up the FAST V8 and Matlab/Simulink.
+These are the topics covered in this tutorial:
+
+1. [Set-up Environment](./Set-up%20Environment)
+2. [Linearization](./Linearization)
+3. [State Space Feedback](./State%20Space%20Feedback)
+4. State estimator
+5. Gain Scheduling
+6. Artificial Neural Network based Gain Scheduling
 
 
 
 
-Other info and disclaimers:
+
+
+
+##Other info and disclaimers:
 
 Controllers designed to the 5MW NREL wind turbine using the MATLAB Simulink and FAST V8.
 Note: OpenFAST is already available and it's open-source, the reason I'm still using FAST V8 is that my MATLAB is an older version not supported on the most recent FAST distribution.

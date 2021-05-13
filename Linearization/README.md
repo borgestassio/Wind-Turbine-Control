@@ -21,7 +21,7 @@ The User's guide also states:
 >It is important to determine an accurate operating point because the linearized model is only accurate for values of the DOFs and inputs that are close to the operating point values.
 
 The objective of the linearization is to extract the state matrices and have the state-space representation of the Wind Turbine model:
-![equation]http://www.sciweavers.org/tex2img.php?eq=%0A%5Cbegin%7Bcases%7D%5Cdot%20%5CDelta%20x%20%3D%20A%20%5CDelta%20x%20%2B%20B%20%5CDelta%20u%20%2BB_d%20%5CDelta%20u_d%20%5C%5C%20%5CDelta%20y%3DC%20%5CDelta%20x%20%2B%20D%20%5CDelta%20u%20%2B%20D_d%20%5CDelta%20u_d%5Cend%7Bcases%7D%20%20%20%20&bc=White&fc=Black&im=png&fs=12&ff=arev&edit=0
+![equation](http://www.sciweavers.org/tex2img.php?eq=%0A%5Cbegin%7Bcases%7D%5Cdot%20%5CDelta%20x%20%3D%20A%20%5CDelta%20x%20%2B%20B%20%5CDelta%20u%20%2BB_d%20%5CDelta%20u_d%20%5C%5C%20%5CDelta%20y%3DC%20%5CDelta%20x%20%2B%20D%20%5CDelta%20u%20%2B%20D_d%20%5CDelta%20u_d%5Cend%7Bcases%7D%20%20%20%20&bc=White&fc=Black&im=png&fs=12&ff=arev&edit=0)
 
 Where: 
 * Δx is the state vector;
