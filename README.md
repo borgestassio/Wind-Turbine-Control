@@ -1,4 +1,4 @@
-# 5MW-NREL-Controllers---Simulink
+# Wind Turbine Controllers with NREL Fast and Matlab/Simulink
 This repository has a few controllers for the 5-MW Reference Wind Turbine for Offshore System Development.
 The controllers are implemented through Matlab / Simulink.
 
@@ -19,9 +19,9 @@ Other info and disclaimers:
 Controllers designed to the 5MW NREL wind turbine using the MATLAB Simulink and FAST V8.
 Note: OpenFAST is already available and it's open-source, the reason I'm still using FAST V8 is that my MATLAB is an older version not supported on the most recent FAST distribution.
 
-The FAST software is distributed by the National Renewable Energy Laboratory in here: https://nwtc.nrel.gov/FAST;
+The [FAST](https://nwtc.nrel.gov/FAST) software is distributed by the National Renewable Energy Laboratory 
 
-Matlab and Simulink are property of Mathworks (http://www.mathworks.com/);
+Matlab and Simulink are property of [Mathworks](http://www.mathworks.com/);
 
 The Matlab version used in this project is the Matlab R20017b
 
@@ -33,9 +33,9 @@ Although this is an individual repository maintained by the only author, some of
 
 Useful links:
 
-The parameters used for the turbine are given by NREL in here: Definition of a 5-MW Reference Wind Turbine for Offshore System Development (http://www.nrel.gov/docs/fy09osti/38060.pdf).
+The parameters used for the turbine are given by NREL in here: [Definition of a 5-MW Reference Wind Turbine for Offshore System Development](http://www.nrel.gov/docs/fy09osti/38060.pdf)
 
-Some controllers are adapted from Advanced Control Design for Wind Turbines; Part I: Control Design, Implementation, and Initial Tests  (http://www.mapcruzin.com/wind-power-publications/research-development/42437.pdf)
+Some controllers are adapted from [Advanced Control Design for Wind Turbines; Part I: Control Design, Implementation, and Initial Tests](http://www.mapcruzin.com/wind-power-publications/research-development/42437.pdf)
 
 
 Fell free to contact me anytime for help, suggestions, critics and insults as well :)
