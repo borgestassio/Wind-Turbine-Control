@@ -16,12 +16,12 @@ I strongly suggest you to read both documents to have a better understanding of 
 
 We proceed with a simple explanation of it does before we move to how to do it.
 
-In order to extract the state matrices, FAST reaches a stead-state solution and then adds smalls perturbations until a linear response is obtained from these perturbations. It's important to note that the Operating Point (OP) is periodic, so it depends on the rotor azimuth position.
+In order to extract the state matrices, FAST reaches a stead-state solution and then adds smalls perturbations until a linear response is obtained from these perturbations. It's important to note that the system is linearized about the Operating Point (OP) and the matrices depend on the rotor azimuth position. Therefore the matrices are periodic.
 The User's guide also states:
 >It is important to determine an accurate operating point because the linearized model is only accurate for values of the DOFs and inputs that are close to the operating point values.
 
 The objective of the linearization is to extract the state matrices and have the state-space representation of the Wind Turbine model:
-![equation](http://www.sciweavers.org/tex2img.php?eq=%0A%5Cbegin%7Bcases%7D%5Cdot%20%5CDelta%20x%20%3D%20A%20%5CDelta%20x%20%2B%20B%20%5CDelta%20u%20%2BB_d%20%5CDelta%20u_d%20%5C%5C%20%5CDelta%20y%3DC%20%5CDelta%20x%20%2B%20D%20%5CDelta%20u%20%2B%20D_d%20%5CDelta%20u_d%5Cend%7Bcases%7D%20%20%20%20&bc=White&fc=Black&im=png&fs=12&ff=arev&edit=0)
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/Linearization/images/eqn1.png "Eq1")
 
 Where: 
 * Δx is the state vector;
@@ -49,7 +49,7 @@ Inside your .fst file, in this case, “NRELOffshrBsline5MW_Onshore.fst”, go t
 + CompAero.
 The others DOFs must be set to False, so your file will look like this:
 
-![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Linearization/images/fst_linearization.png "Linear1")
+![alt text](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/Linearization/images/fst_linearization.png "Linear1")
 
 To perform the simulation, we will need to change some lines in the *SIMULATION CONTROL* part:
 + ADAMSPREP should be set to 1 (Run FAST);
@@ -59,7 +59,7 @@ To perform the simulation, we will need to change some lines in the *SIMULATION 
 + DT is set to 0.006 for no particular reason described in any document.
 
 The SIMULATION CONTROL portion of your file should be similar to this:
-![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Linearization/images/fst_linearization2.png "Linear2")
+![alt text](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/Linearization/images/fst_linearization2.png "Linear2")
 
 
 
@@ -74,7 +74,7 @@ The linearization process utilizes the turbine parameters to perform the calcula
 + GenModel is 3;
 
 The others parameters remain the same, so your file should be similar to this:
-![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Linearization/images/fst_linearization3.png "Linear3")
+![alt text](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/Linearization/images/fst_linearization3.png "Linear3")
 
 I might be mistaken, but I believe all other parameters are already set correctly, so it is time to move to other file, at this point, specifically to the NRELOffshrBsline5MW_Linear.dat file, where the linearization properties are.
 
@@ -85,18 +85,18 @@ Here, the changes are:
 + CntrlInpt to 4;
 + NDisturbs to 1;
 + Disturbnc to 1;
-![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Linearization/images/fst_linearization4.png "Linear4")
+![alt text](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/Linearization/images/fst_linearization4.png "Linear4")
 
 
 With these changes, the parameters are all set, however, one more thing is necessary, the wind profile. To make things easier, we will use the simplest wind profile file, a Hub-Height file, this file implements a 12 m/s wind profile, suitable for model linearization in FAST v7, Jason Jonkman made this file available in the NREL Forum in a topic about the 5 MW Wind Turbine (https://wind.nrel.gov/forum/wind/viewtopic.php?f=4&t=621). Although the file extension attached in the topic is .txt, the usual extension is .wnd.
 The file format is quite simple, in the file one can see that the data is divided into columns, and in this case, all we need is the time and wind speed, so the file looks exactly like this: 
 
-![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Linearization/images/fst_linearization5.png "Linear5")
+![alt text](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/Linearization/images/fst_linearization5.png "Linear5")
 
 Along with the wind profile, we have to tell FAST which file it will use for the wind, we do this by changing the AeroDyn file (NRELOffshrBsline5MW_AeroDyn.ipt), as shown in the Figure below.
 
 
-![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Linearization/images/fst_linearization6.png "Linear6")
+![alt text](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/Linearization/images/fst_linearization6.png "Linear6")
 
 These files are in the folder *Files* here, so if do not want to change every file, and have trust in me, you can use the files provided here or [here](https://github.com/borgestassio/FASTv7).
 
@@ -108,11 +108,11 @@ Type `FAST.EXE` (or `.\FAST.exe` ) followed by the input file, in this case:
 
 `.\FAST.exe NRELOffshrBsline5MW_Onshore.fst`
 
-![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Linearization/images/fst_linearization7.png "Linear7")
+![alt text](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/Linearization/images/fst_linearization7.png "Linear7")
 
 The final output should be similar to this:
 
-![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Linearization/images/fst_linearization8.png "Linear8")
+![alt text](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/Linearization/images/fst_linearization8.png "Linear8")
 
 
 ##	POST-PROCESSING WITH MBC3
@@ -127,14 +127,14 @@ To obtain the desired matrices we must use one function from the MBC3, I leave y
 
 The command window on Matlab will as for the .lin file
 
-![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Linearization/images/fst_linearization9.png "Linear9")
+![alt text](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/Linearization/images/fst_linearization9.png "Linear9")
 
 4.	Enter the name of the file without the .lin extension, in my case it is: NRELOffshrBsline5MW_Onshore
 
 5.	If everything went fine, you will see the message: 
 
 
-![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Linearization/images/fst_linearization10.png "Linear10")
+![alt text](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/Linearization/images/fst_linearization10.png "Linear10")
 
 6.	Your matrices are now available, as described in [User’s Guide to MBC3](https://www.nrel.gov/docs/fy10osti/44327.pdf), as the azimuth-averaged state matrices:
 * AvgAMat = A 
@@ -143,5 +143,11 @@ The command window on Matlab will as for the .lin file
 * AvgCMat = C
 * AvgDMat = D
 * AvgDdMat = Dd
+
+Given that the linearized model is calculated only around the OP, the results for the linearized model will include not only the matrices but the OP as well. This is very important because the linear model will only represent the system around the OP, therefore the plant to be controlled is the WT working on the OP.
+The OP includes **Rotor Speed, Pitch Angle and Wind Speed.**
+
+This means that a simple feedback controller will work best if the WT is operating close to the OP. We'll increase the complexity of the model and its controller until we can cover all Operating region of the WT.
+
 
 In possession of these matrices, you now have a linearized model that can be used to design the controllers described in [Advanced Control Design for Wind Turbines](https://www.nrel.gov/docs/fy08osti/42437.pdf). Refer to the other folders to find the guide for each type of controller.

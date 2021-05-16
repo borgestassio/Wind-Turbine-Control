@@ -90,3 +90,6 @@ The differences clearly noted are discussed on the [NREL Forum](https://wind.nre
 
 
 ![alt text](https://raw.githubusercontent.com/borgestassio/5MW-NREL-Controllers---Simulink/master/Set-up%20Environment/Figures/DDLxSimu_Gen.png "DLLxSimulink Generator")
+
+
+**Note: We'll go into details about the data indexing and filtering when implementing the controllers**
