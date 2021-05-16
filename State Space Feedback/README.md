@@ -4,7 +4,7 @@ In here we focus solely on building the simple state space feedback controllers,
 
 The state space equation for a linear system has the form:
 
-![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Feedback/images/eqn1.png "Eq1")
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/Linearization/images/eqn1.png "Eq1")
 
 
 We saw how to obtain the A,B,C and D matrices from the linearization. 
@@ -15,7 +15,7 @@ Now, we extract that information to create our own model and design the feedback
 
 Using the Lineazation guide, we get the 1 state model (single DOF - Rotor - *GenDOF*), we can see that the system was linearized with the following parameters for the OP:
 
-![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Feedback/images/eqn2.png "Eq1")
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Feedback/images/eq2.png "Eq2")
 
 The matricies extracted from the linearization are:
 * A = -0.37035;
@@ -28,11 +28,11 @@ The matricies extracted from the linearization are:
 
 This is the *AvgAMat*: 
 
-![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Feedback/images/eq3.png "Eq2")
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Feedback/images/eq3.png "Eq3")
 
 This is the *x*:
 
-![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Feedback/images/eq3.png "Eq2")
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Feedback/images/eq4.png "Eq4")
 
 I hope you can see the reason why only the element *A22* on this 1-State model.
 
