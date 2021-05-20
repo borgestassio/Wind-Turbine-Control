@@ -93,3 +93,5 @@ The differences clearly noted are discussed on the [NREL Forum](https://wind.nre
 
 
 **Note: We'll go into details about the data indexing and filtering when implementing the controllers**
+
+If you want to learn a bit more visit the State Space Feedback section.
