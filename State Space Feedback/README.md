@@ -133,42 +133,22 @@ Where you can see that we extract all 3 states and pass them to the feedback con
 
 You can run the simulation using different pole placement values and even the LQR technique to see how the system responds.
 
-## 3 States - State Estimator
+## 5 States Model
 
-We know that some measurements are not available, whether it's due to technological challenges or simply prohibitive costs, but a more accurate model of the system has all the states present. Therefore, to allow the state feedback we need to estimate the unmeasured states.
-On the 3 States model we extracted, the only state directly available is the rotor speed, so we need to use this variable to estimate the other two (Drivetrain Torsion and its derivative).
-There are a number of textbooks that explain this topic, we'll limit to present only the expression for the state space representation with the state estimator.
+For this model, we add the flapwise DOF, which in turn adds 2 states for each blade: 1st flapwise bending deflecion mode and 1st flapwise bending velocity. Therefore, a total of 6 states are added to the model. This results in a non-controllable and non-observable system.
+The solution, proposed by Wang et al (2016), is to explore the symmetrical and asymmetrical effects of the blades on the rotor. This allows the states to be transformed in the symmetrical and asymmetrical rotor flap bending. Please note that on the Collective Pitch Control (CPC), the asymmetrical mode is not used, given that the system will only controlable when using the Individual Pitch Control (IPC) method, we'll get to that later.
+The manipulation of the states follows:
 
-![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Feedback/images/estimator.PNG "Estimator")
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Feedback/images/5state_manip.PNG "5 states manipulation")
 
-Where:
+Using these states and the CPC method, the system is observable and controlable.
 
-![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Feedback/images/estimator2.PNG "Estimator2")
+As usual, you can find the *.lin*, the *.m* and the Simulink Model on the [files folder](https://github.com/borgestassio/Wind-Turbine-Control/tree/master/State%20Space%20Feedback/files/5_states)
+In the *.m* file you'll find the implementation of this manipulation after indexing the states from the linearized system.
 
-The estimator gain K can be obtained either by pole placement or by LQR.
-In this example we'll use pole placement, you can find the LQR method on the *states_3_estimator.m* file.
+I used the LQR to find the feedback gain, but you can change that and use pole placement.
+Please note that on the same file there are some parts commented that achieve other objectives that we'll see later.
 
-We also look into using the Disturbance Accommodating Control (DAC) to allow the system to react when facing a disturbance, this would take the system closer to its OP, thus allowing a better perfomance in controlling the rotor speed. I won't go into details about this technique as we focus on implementing the controllers, but if you want to learn more, I based this controller on the one developed by Alan Wright on [Modern Control Design for Flexible Wind Turbines](https://www.nrel.gov/docs/fy04osti/35816.pdf)
 
-When including the disturbances, the state space representation is:
-
-![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Feedback/images/estimator4.PNG "Estimator4")
-
-Bd is provided with the linearization as well.
-
-We need to find a standard space state representation that includes the disturbance, so we have:
-
-![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Feedback/images/estimator3.PNG "Estimator3")
-
-Where Ke is the estimator gain, Kd is the wind disturbance estimator gain, Gd is the feedback gain for the wind disturbance estimator.
-These values can either calculated from a pole placement or LQR.
-
-In order to allow the easier implementation of this method, we simplify the representation to a regular state space:
-
-![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Feedback/images/estimator6.PNG "Estimator6")
-
-Where:
-
-![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Feedback/images/estimator5.PNG "Estimator5")
-
-You can see the implentation of this controller on *states_3_estimator.m*.
+Alright, it's time to move to state observers now because we'll keep adding states that are unable to being measured.
+See the [next section](https://borgestassio.github.io/Wind-Turbine-Control/State%20Space%20Observer/) to continue this tutorial.
