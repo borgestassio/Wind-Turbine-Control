@@ -13,7 +13,7 @@ These are the topics covered in this tutorial:
 1. [Set-up Environment](./Set-up%20Environment)
 2. [Linearization](./Linearization)
 3. [State Space Feedback](./State%20Space%20Feedback)
-4. [State estimator]((./State%20Space%20Observer)
+4. [State Space Observer](./State%20Space%20Observer)
 5. Gain Scheduling
 6. Artificial Neural Network based Gain Scheduling
 

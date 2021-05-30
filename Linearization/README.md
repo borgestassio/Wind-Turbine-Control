@@ -123,7 +123,7 @@ To obtain the desired matrices we must use one function from the MBC3, I leave y
 
 1.	Download MBC3 and extract it on your Matlab folder;
 2.	Go to the folder where your .lin file is located;
-3.	Execute the following command: GetMats ;
+3.	Execute the following command: `GetMats` ;
 
 The command window on Matlab will as for the .lin file
 
