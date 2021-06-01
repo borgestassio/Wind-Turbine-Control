@@ -8,6 +8,8 @@ Again, I won't go in details about this method on this tutorial, but you can fin
 
 We start with the 3 States system because we use the Drive Train Torsion and its derivative which is usually not available as a measurement in a WT (someone correct me, if I'm wrong, please).
 
+
+
 ## 3 States + Disturbance Accomodating Control (DAC)
 
 We know that some measurements are not available, whether it's due to technological challenges or simply prohibitive costs, but a more accurate model of the system contains a number of states that cannot be measured. Therefore, to allow the use of a state feedback controller,we need to estimate the unmeasured states.
@@ -84,7 +86,27 @@ These are the states we'll have for the 9 states model:
 ![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/9states.PNG "mbc 9 states")
 
 
-The files necessary to implement this controller are available on this repository, under the files folder, as usual.
+The files necessary to implement this controller are available on this repository, under the [files folder](https://github.com/borgestassio/Wind-Turbine-Control/tree/master/State%20Space%20Observer/files/9%20States%20MBC%20%2B%20DAC), as usual.
 
 
 ## 11 States Model CPC + DAC
+
+For the 11 States model, we add the 1st tower fore-aft mode DOF (*TwFA1*) and its derivative. In here we assume the tower fore-aft speed is measured, therefore the C matrix has 2 lines, one for the Rotor Speed and the second one for the Tower fore-aft speed. The other states are estimated using the same technique for the state observer.
+The states are presented below:
+
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/11states.PNG "mbc 11 states")
+
+The Block Diagram for this system is:
+
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/11statesCPC.PNG "block 11 states CPC")
+
+I used LQR to find the gains for the estimator and the state feedback.
+
+
+**You might be asking yourself at this point something like 'why is this guy just adding DOF after DOF with no purpose?'**
+Well, it might seem that we have no goal here, but by adding more DOFs we get increasingly closer to what the real-world system is like. But not only that, by knowing and taking into consideration the relationship between the states when designing the controllers, we can also set the controller to control these states as well and enhance the tower fore-aft oscilation for instance. 
+There's a quick experiment you can run, enable all the DOFs on the WT and run the 3 states controller and this one, then compare the results.
+
+You can also find the files for the implementation of this controller under the [files folder](https://github.com/borgestassio/Wind-Turbine-Control/tree/master/State%20Space%20Observer/files/11%20States%20MBC%20%2B%20DAC), as usual.
+
+
