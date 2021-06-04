@@ -128,7 +128,7 @@ Note that the azimuth angle (*psi*) is necessary, therefore it's also needed for
 
 In the same MBC User Guide, Bir shows how to perform the inverse transformation:
 
-![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/inverse_mbc.PNG.PNG "inverse mbc")
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/inverse_mbc.PNG "inverse mbc")
 
 Note that the blades on this WT are 120° (2\*pi/3) apart.
 
