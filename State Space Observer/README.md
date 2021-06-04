@@ -89,7 +89,7 @@ These are the states we'll have for the 9 states model:
 The files necessary to implement this controller are available on this repository, under the [files folder](https://github.com/borgestassio/Wind-Turbine-Control/tree/master/State%20Space%20Observer/files/9%20States%20MBC%20%2B%20DAC), as usual.
 
 
-## 11 States Model CPC + DAC
+## 11 States Model MBC CPC + DAC
 
 For the 11 States model, we add the 1st tower fore-aft mode DOF (*TwFA1*) and its derivative. In here we assume the tower fore-aft speed is measured, therefore the C matrix has 2 lines, one for the Rotor Speed and the second one for the Tower fore-aft speed. The other states are estimated using the same technique for the state observer.
 The states are presented below:
@@ -109,4 +109,36 @@ There's a quick experiment you can run, enable all the DOFs on the WT and run th
 
 You can also find the files for the implementation of this controller under the [files folder](https://github.com/borgestassio/Wind-Turbine-Control/tree/master/State%20Space%20Observer/files/11%20States%20MBC%20%2B%20DAC), as usual.
 
+
+
+## 11 States Model MBC IPC + DAC
+
+Now we'll start to implement the Individual Pitch Control, where the controller will control the angle of each blade. The MBC transformation for the blades will transform the blades' angle to their collective, vertical displacement and horizontal displacement components, just like what happens to the flapwise bending mode we discussed earlier.
+The difference here is that the controller output is actually in the Non-rotational plan, but the WT does require the angles, so we have to apply an inverve MBC transformation to get the pitch angle for each blade.
+
+Below you can see how the block diagram looks like for this system:
+
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/11statesIPC.PNG "block 11 states IPC")
+
+Given that we absolutely need to perform the MBC inverse transform, I present below the MBC transformation matrix:
+
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/mbc_transform.PNG "mbc transformation")
+
+Note that the azimuth angle (*psi*) is necessary, therefore it's also needed for the inverse transformation. For the sake of brevity, we assume that the azimuth angle is measured.
+
+In the same MBC User Guide, Bir shows how to perform the inverse transformation:
+
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/inverse_mbc.PNG.PNG "inverse mbc")
+
+Note that the blades on this WT are 120° (2\*pi/3) apart.
+
+The states are the same as the previous model, so no changes to that.
+
+The Simulink model is shown below:
+
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/simulink_mbc11_ipc.PNG "simulink 11 mbc ipc")
+
+This should be the result you get for the rotor speed:
+
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/11statesIPC_rotor.PNG "rotor speed 11 ipc")
 
