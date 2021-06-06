@@ -188,4 +188,5 @@ The Simulink implementation:
 
 The result for the rotor speed is shown here:
 
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/12_states_rotor.png "12 States block diagram")
 
