@@ -185,3 +185,7 @@ The block diagram for this system is shown below:
 The Simulink implementation:
 
 ![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/12_states_simulink.PNG "12 States block diagram")
+
+The result for the rotor speed is shown here:
+
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/12_states_rotor.PNG "12 States block diagram")
