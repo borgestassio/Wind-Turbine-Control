@@ -142,3 +142,46 @@ This should be the result you get for the rotor speed:
 
 ![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/11statesIPC_rotor.PNG "rotor speed 11 ipc")
 
+Let's take a look at the pitch angles so we can confirm it's actually an IPC controller:
+
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/pitch_11_ipc.png "pitch angle 11 ipc")
+
+
+## 11 States Model MBC IPC + DAC - Tower Accelaration
+
+We assume that the tower fore-aft displacement or speed is able to be measured, however it's more common to have an accelerometer to measure the tower fore-aft acceleration. With that in mind, we change the linearization and the matrices extraction to use the tower fore-aft accelaration instead of the speed or displacement.
+
+We know that this variable is not among the states for the system and the linearization doesn't provide us with this state, but there's a workaround that allow us to get the measurement into the linearized system.
+
+First, we need to make this measurement available on the *.lin* file, we do this by adding *"QD2_TFA1"* to the outlist on the *NRELOffshrBsline5MW_Onshore_11_STATES_IPC.fst* file for linearization (you can locate this file under the linerization folder for this model):
+
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/outputs_linear.PNG "outputs linearization")
+
+This will include the tower acceleration to the output states (y) and it'll represent this measurement as a combination of the state space variables present on the system.
+If you look at the *.lin* file, you can locate that this measurement will be shown on the 7th line of the C matrix.
+
+Therefore, we extract the 7th line of the MBC_AvgC matrix, so the tower acceleration is represented as a combination of all variables on the linearized system.
+
+The Simulink model only needs to updated to measure the tower accelaration instead of speed, so we update the index to **QD2_TFA1** and that's all.
+
+
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/simulink_mbc11_ipc_accel.PNG "simulink accel")
+
+
+
+## 12 States (11 + Integral) Model MBC IPC + DAC
+
+Although we're adding more states and have a DAC to try to compensate for the wind speed, the controller is still not managing to keep the rotor speed under the desired OP. 
+A technique we implement now is to add a integral state, with this state we can integrate the rotor error (just like the 'I' component of the PID) and use to correct the collective pitch component and keep the rotor speed closer to the reference value.
+
+The state space variables for this model are:
+
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/12_states.PNG "12 States")
+
+The block diagram for this system is shown below:
+
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/12_states_block.PNG "12 States block diagram")
+
+The Simulink implementation:
+
+![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/12_states_simulink.PNG "12 States block diagram")
