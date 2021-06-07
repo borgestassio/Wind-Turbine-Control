@@ -190,3 +190,4 @@ The result for the rotor speed is shown here:
 
 ![equation](https://raw.githubusercontent.com/borgestassio/Wind-Turbine-Control/master/State%20Space%20Observer/images/12_states_rotor.png "12 States block diagram")
 
+See the [next section](https://borgestassio.github.io/Wind-Turbine-Control/ANN%20GS/) to continue this tutorial and see the use of a Artificial Neural Network and Gain Scheduling.
