@@ -14,7 +14,7 @@ These are the topics covered in this tutorial:
 2. [Linearization](./Linearization)
 3. [State Space Feedback](./State%20Space%20Feedback)
 4. [State Space Observer](./State%20Space%20Observer)
-5. [Artificial Neural Network based Gain Scheduling]((./ANN%20GS))
+5. [Artificial Neural Network based Gain Scheduling](./ANN%20GS)
 
 
 
