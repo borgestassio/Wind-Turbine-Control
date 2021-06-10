@@ -15,14 +15,12 @@ These are the topics covered in this tutorial:
 3. [State Space Feedback](./State%20Space%20Feedback)
 4. [State Space Observer](./State%20Space%20Observer)
 5. [Artificial Neural Network based Gain Scheduling](./ANN%20GS)
+6. [Comparing Controllers](./Comparing%20Controllers)
 
 
 
 
-
-
-
-##Other info and disclaimers:
+## Other info and disclaimers:
 
 Controllers designed to the 5MW NREL wind turbine using the MATLAB Simulink and FAST V8.
 Note: OpenFAST is already available and it's open-source, the reason I'm still using FAST V8 is that my MATLAB is an older version not supported on the most recent FAST distribution.
