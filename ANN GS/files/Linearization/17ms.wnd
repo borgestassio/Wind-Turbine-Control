@@ -1,0 +1,6 @@
+! Wind file for Trivial turbine.
+! Time	Wind	Wind	Vert.	Horiz.	Vert.	LinV	Gust
+!		Speed	Dir	Speed	Shear	Shear	Shear	Speed
+  0.0	17.0	0.0	0.0	0.0	0.0	0.0	0.0
+  0.1	17.0	0.0	0.0	0.0	0.0	0.0	0.0
+1999.9	17.0	0.0	0.0	0.0	0.0	0.0	0.0
