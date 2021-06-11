@@ -4,7 +4,7 @@ The controllers are implemented through Matlab / Simulink.
 
 We start with a simple 1-DOF controller, where we consider only the rotor.
 The complexity of the system is increased up to 11 DOF, where we use MBC techniques to extract important features, don't worry, the details will be on the appropriate folder.
-On the control side, we start with a simple feedback controller until we reach an Artificial Neural Network based controller. In the process, we'll see state estimator (Kalman Filter), disturbance rejection and gain scheduling, all in due time.
+On the control side, we start with a simple feedback controller until we reach an Artificial Neural Network based controller. In the process, we'll see state observer (Kalman Filter), disturbance rejection and gain scheduling, all in due time.
 
 Ok, let's cut to the chase, you're here to see some pretty graphs and poor explanation.
 
