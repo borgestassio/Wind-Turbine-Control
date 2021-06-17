@@ -17,8 +17,9 @@ These are the topics covered in this tutorial:
 5. [Artificial Neural Network based Gain Scheduling](./ANN%20GS)
 6. [Comparing Controllers](./Comparing%20Controllers)
 
+This is the "final" result, where we compare a baseline PID controller with a Radial Basis Function Neural Network based controller:
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4yMLgmyRM1s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Other info and disclaimers:
 
