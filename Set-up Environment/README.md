@@ -34,7 +34,11 @@ The FAST V8 comes with two example files to run with on Simulink, both are locat
 
 We will start by the OpenLoop example, as this example will perform all certification tests provided by FAST V8 (1 – 26).
 
-Note: If you use a 64 bits version of Matlab, your FAST_SFunc is also a 64 bits version, that means you need to change the *_ServoDyn.dat file to call the 64 bits version of the DLL controller. To make this change, open the file “NRELOffshrBsline5MW_Onshore_ServoDyn.dat” inside the “…\Fast\CertTest\5MW_Baseline” folder and change the line 66 from  *DISCON_win32.dll* to *ServoData/DISCON_x64.dll*
+
+
+~~Note: If you use a 64 bits version of Matlab, your FAST_SFunc is also a 64 bits version, that means you need to change the *_ServoDyn.dat file to call the 64 bits version of the DLL controller. To make this change, open the file “NRELOffshrBsline5MW_Onshore_ServoDyn.dat” inside the “…\Fast\CertTest\5MW_Baseline” folder and change the line 66 from  *DISCON_win32.dll* to *ServoData/DISCON_x64.dll*~~
+
+As pointed by [TheAfzalAmanullah](https://github.com/TheAfzalAmanullah):  If you use a 64 bits version of Matlab, your FAST_SFunc is also a 64 bits version, that means you need to change the *_ServoDyn.dat* file to call the 64 bits version of the DLL controller. To make this change, open ALL the files that end in *_ServoDyn.dat*, for example “NRELOffshrBsline5MW_Onshore_ServoDyn.dat” inside the “…\Fast\CertTest\5MW_Baseline” folder and change the line 66 from  *DISCON_win32.dll* to *ServoData/DISCON_x64.dll*
 
 
 Assuming that you have sucesscefuly compiled the S_Func, you can run the file *Run_OpenLoop.m* to evaluate all certification tests with the FAST_SFunc, it may take a while to complete. If no error comes up, you will find new files in the CertTest folder, the output files from the SFunc have the extension: .SFunc.out or .SFunc.outb, if it is binary file format, we'll get to that later.
